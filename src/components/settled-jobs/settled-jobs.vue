@@ -1,8 +1,8 @@
 <template>
   <form class='settled-jobs'>
     <h2>Список настроенных должностей</h2>
-    <ul class='list' v-if='sortedJobs.length'>
-      <settledJob v-for='job of sortedJobs'
+    <ul class='settled-jobs__list' v-if='sortedJobs.length'>
+      <settled-job v-for='job of sortedJobs'
                   :job='job'
                   :key='job.id'
                   :show-notice='showNotice'
@@ -10,7 +10,7 @@
                   @remove-job='removeJob(job.id)'/>
     </ul>
     <span v-else><b>Список пуст</b></span>
-    <v-button class='save-btn'
+    <v-button class='settled-jobs__save-btn'
               type='submit'
               @click.prevent='sendChanges'
               :disabled='btnText === textMap.empty'>{{ btnText }}</v-button>
@@ -19,7 +19,7 @@
 
 <script setup>
 import { computed, ref, watch } from 'vue';
-import SettledJob from '@/components/settledJobs/settledJob.vue';
+import SettledJob from '@/components/settled-jobs/settled-job.vue';
 import VButton from '@/components/ui/v-button.vue';
 
 const props = defineProps({
@@ -90,11 +90,13 @@ const sendChanges = () => {
 </script>
 
 <style scoped lang='scss'>
-.list {
-  list-style: none;
-}
-.save-btn {
-  margin-top: 20px;
-  min-width: 160px;
+.settled-jobs {
+  &__list {
+    list-style: none;
+  }
+  &__save-btn {
+    margin-top: 20px;
+    min-width: 160px;
+  }
 }
 </style>

@@ -1,11 +1,11 @@
 <template>
   <li class='settled-job'>
-    <jobItem is='span' :tuning='job.tuning' :title='job.name' @btn-action='removeJob'/>
+    <job-item is='span' :tuning='job.tuning' :title='job.name' @btn-action='removeJob'/>
     <label>
-      <span class='salary'>Базовая заработная плата</span>
-      <span class='input-container'>
+      <span class='settled-job__salary'>Базовая заработная плата</span>
+      <span class='settled-job__container'>
         <input type="text" v-model="input" @input="filterNonNumeric" />
-        <span class='input-container__notice' v-if='showNotice && !input'>Необходимо заполнить поле</span>
+        <span class='settled-job__notice' v-if='showNotice && !input'>Необходимо заполнить поле</span>
       </span>
     </label>
   </li>
@@ -50,18 +50,18 @@ const removeJob = () => {
     display: flex;
     flex-flow: row;
     gap: 10px;
-    & .input-container {
-      position: relative;
-      &__notice {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        transform: translateY(100%);
-        font-size: 12px;
-        color: red;
-      }
-    }
+  }
+  &__container {
+    position: relative;
+  }
+  &__notice {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transform: translateY(100%);
+    font-size: 12px;
+    color: red;
   }
 }
 </style>

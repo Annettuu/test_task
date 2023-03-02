@@ -1,11 +1,11 @@
 <template>
-  <article class='search' v-if='jobs'>
+  <article class='v-search' v-if='jobs'>
     <h2>Поиск должностей</h2>
     <input type='search'
-           class='input'
+           class='v-search__input'
            placeholder='Искать должность по названию...'
            v-model='searchStr'>
-    <ul class='list'>
+    <ul class='v-search__list'>
       <jobItem v-for='job of sortedJobs'
                :key='job.id'
                :title='job.name'
@@ -37,15 +37,15 @@ const setJob = (job) => {
 </script>
 
 <style scoped lang='scss'>
-.search {
+.v-search {
   display: flex;
   flex-flow: column;
   margin-bottom: 20px;
-  & .input {
+  &__input {
     padding: 10px;
     margin-bottom: 10px;
   }
-  & .list {
+  &__list {
     border-top: 1px solid black;
   }
 }

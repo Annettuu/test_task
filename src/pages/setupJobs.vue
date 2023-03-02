@@ -7,8 +7,8 @@
 </template>
 
 <script setup>
-import Search from '@/components/search/search.vue';
-import SettledJobs from '@/components/settledJobs/settledJobs.vue';
+import Search from '@/components/v-search/v-search.vue';
+import SettledJobs from '@/components/settled-jobs/settled-jobs.vue';
 import { getJobs } from '@/service/actions';
 import { computed, ref } from 'vue';
 

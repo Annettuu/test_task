@@ -1,6 +1,6 @@
 <template>
   <component :is='is' class='job-item'>
-    <span class='title'>{{ title }}</span>
+    <span class='job-item__title'>{{ title }}</span>
     <v-button @click='btnAction'>{{ btnText }}</v-button>
   </component>
 </template>
@@ -39,7 +39,7 @@ const btnText = computed(() => {
   justify-content: space-between;
   padding: 10px;
   border-bottom: 1px solid black;
-  & .title {
+  &__title {
     font-size: 12px;
     color: black;
   }
