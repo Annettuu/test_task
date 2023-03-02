@@ -1,7 +1,7 @@
 <template>
   <section class='setup-jobs'>
     <h1 class='_hidden'>Настройка должностей</h1>
-    <search v-if='jobs' @upd-settled-jobs='updateJob' :jobs='jobs'/>
+    <search v-if='jobs.length' @upd-settled-jobs='updateJob' :jobs='jobs'/>
     <settledJobs @upd-settled-jobs='updateJob' :jobs='settledJobsList'/>
   </section>
 </template>
