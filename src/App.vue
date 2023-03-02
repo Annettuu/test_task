@@ -1,6 +1,11 @@
 <template>
   <main>
-    <setupJobs />
+    <suspense>
+      <setupJobs />
+      <template #fallback>
+        Загрузка
+      </template>
+    </suspense>
   </main>
 </template>
 
